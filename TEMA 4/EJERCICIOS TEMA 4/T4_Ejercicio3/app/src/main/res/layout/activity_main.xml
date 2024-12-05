@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativePadre">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/intenciones"
+        android:textColor="#9C9C9C"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/toolBar"/>
+
+    <Button
+        android:id="@+id/btnMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mandar_mensaje"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/txtWelcome"/>
+
+    <Button
+        android:id="@+id/btnPaginaWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/abrir_p_gina_web"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/btnMensaje"/>
+
+    <Button
+        android:id="@+id/btnLlamar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/llamar_por_tel_fono"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/btnPaginaWeb"/>
+
+    <Button
+        android:id="@+id/btnMapa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/abrir_mapa"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/btnLlamar"/>
+
+    <Button
+        android:id="@+id/btnFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tomar_foto"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/btnMapa"/>
+
+    <Button
+        android:id="@+id/btnCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mandar_correo"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/btnFoto"/>
+
+    <Button
+        android:id="@+id/btnStreetView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/street_view"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/btnCorreo"/>
+
+</RelativeLayout>

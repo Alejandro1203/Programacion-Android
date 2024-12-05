@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">EjercicioT4_1</string>
+    <string name="robotin_Saludo">¡Hola soy Robotín!</string>
+    <string name="bienvenida">Bienvenido a la aplicación de prueba de la unidad 3</string>
+    <string name="crear_recordatorio">Crear recordatorio</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="introduzca_su_fecha_de_nacimiento">Introduzca su fecha de nacimiento</string>
+    <string name="fecha_de_nacimiento">Fecha de nacimiento</string>
+    <string name="introduzca_su_nombre">Introduzca su nombre</string>
+    <string name="nombre">Nombre</string>
+    <string name="gracias_por_participar">Gracias por participar!!!</string>
+    <string name="c_mo_calificas_tu_experiencia">¿Cómo calificas tu experiencia?</string>
+    <string name="c_mo_calificas_la_funcionalidad">¿Cómo calificas la funcionalidad?</string>
+    <string name="c_mo_calificas_el_dise_o">¿Cómo calificas el diseño?</string>
+    <string name="c_mo_calificas_la_utilidad">¿Cómo calificas la utilidad?</string>
+    <string name="por_favor_valore_la_aplicaci_n">Por favor, valore la aplicación</string>
+</resources>

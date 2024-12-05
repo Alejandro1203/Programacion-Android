@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">EjercicioT4_02-Examen</string>
+    <string name="acceder">Acceder</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="usuario">Usuario</string>
+    <string name="te_damos_la_bienvenida">TE DAMOS LA BIENVENIDA</string>
+    <string name="c_mo_podemos_ayudarte">¿CÓMO PODEMOS AYUDARTE?</string>
+    <string name="perder_peso">PERDER PESO</string>
+    <string name="volverme_m_s_fuerte">VOLVERME MÁS FUERTE</string>
+    <string name="mantenerse_en_forma">MANTENERSE EN FORMA</string>
+    <string name="siguiente">SIGUIENTE</string>
+    <string name="en_qu_parte_te_quieres_centrar">¿EN QUÉ PARTE TE QUIERES CENTRAR?</string>
+    <string name="barriga">Barriga</string>
+    <string name="brazo">Brazo</string>
+    <string name="muslos">Muslos</string>
+    <string name="gl_teos">Glúteos</string>
+    <string name="establece_tu_objetivo_semanal">ESTABLECE TU OBJETIVO SEMANAL</string>
+</resources>
