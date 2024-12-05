@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Spinner que carga los datos desde Java-->
+    <Spinner
+        android:id="@+id/miSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Spinner que carga los datos desde XML-->
+    <Spinner
+        android:id="@+id/miSpinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/valores"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:background="@color/black"/>
+
+
+
+    <!-- ________________________________________-->
+
+    <TextView
+        android:id="@+id/lbl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/miCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pulsa una opción"
+        android:checked="true"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:background="@color/black"/>
+
+    <!-- ________________________________________-->
+
+    <RadioGroup
+        android:id="@+id/grupo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opción 1"/>
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opción 2"/>
+
+
+    </RadioGroup>
+
+    <!-- ________________________________________-->
+
+    <Switch
+        android:id="@+id/miSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- ________________________________________-->
+
+    <RatingBar
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="2.0"
+        android:stepSize="0.5"/>
+
+    <!-- ________________________________________-->
+
+    <SeekBar
+        android:id="@+id/seek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="60"
+        android:min="0"
+        android:progress="0"/>
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:textSize="40dp"
+        android:text="Transparencias"/>
+
+    <!-- ________________________________________-->
+
+    <ProgressBar
+        android:id="@+id/progressCircular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyle"/>
+
+    <ProgressBar
+        android:id="@+id/progressLineal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="true"/>
+
+</LinearLayout>

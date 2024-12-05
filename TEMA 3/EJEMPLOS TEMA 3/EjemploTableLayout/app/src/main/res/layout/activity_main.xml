@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="#CDCED4"
+    android:stretchColumns="0,2">
+    <!-- Expande las columnas 0 y 2. Si quiero todas pongo *
+    La primera columna es 0-->
+
+    <TableRow>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:layout_margin="2dp"/>
+
+        <!-- El color del botón se cambia con backgroundTint
+        El atributo background cambia el color del área de la vista (botón)-->
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:layout_margin="2dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:layout_margin="2dp"/>
+
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:layout_margin="2dp"/>
+
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:layout_margin="2dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:layout_margin="2dp"/>
+
+    </TableRow>
+
+
+
+
+</TableLayout>

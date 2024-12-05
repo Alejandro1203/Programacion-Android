@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#616161">
+
+    <TextView
+        android:id="@+id/txtInicio"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/por_favor_valore_la_aplicaci_n"
+        android:textSize="20sp"
+        android:background="?attr/colorPrimary"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+
+    <RelativeLayout
+        android:id="@+id/secciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtUtilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c_mo_calificas_la_utilidad"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"/>
+        
+        <RatingBar
+            android:id="@+id/ratingUtilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="1.0"
+            android:stepSize="0.5"
+            android:theme="@style/color"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/txtUtilidad"/>
+
+        <TextView
+            android:id="@+id/txtDiseño"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c_mo_calificas_el_dise_o"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ratingUtilidad"/>
+
+        <RatingBar
+            android:id="@+id/ratingDiseño"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="1.0"
+            android:stepSize="0.5"
+            android:theme="@style/color"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/txtDiseño"/>
+
+        <TextView
+            android:id="@+id/txtFuncionalidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c_mo_calificas_la_funcionalidad"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ratingDiseño"/>
+
+        <RatingBar
+            android:id="@+id/ratingFuncionalidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="1.0"
+            android:stepSize="0.5"
+            android:theme="@style/color"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/txtFuncionalidad"/>
+
+        <TextView
+            android:id="@+id/txtExperiencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c_mo_calificas_tu_experiencia"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ratingFuncionalidad"/>
+
+        <RatingBar
+            android:id="@+id/ratingExperiencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="1.0"
+            android:stepSize="0.5"
+            android:theme="@style/color"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/txtExperiencia"/>
+
+        <Button
+            android:id="@+id/btnAceptar"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:text="@string/aceptar"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/ratingExperiencia"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/android"
+            android:visibility="invisible"
+            android:layout_below="@id/btnAceptar"/>
+
+        <TextView
+            android:id="@+id/txtAgradecimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gracias_por_participar"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/logo"/>
+    </RelativeLayout>
+</LinearLayout>

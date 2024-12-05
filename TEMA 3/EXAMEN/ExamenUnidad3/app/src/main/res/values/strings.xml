@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ExamenUnidad3AlejandroFernandezGomez</string>
+    <string name="acceder">Acceder</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="usuario">Usuario</string>
+    <string name="te_damos_la_bienvenida">TE DAMOS LA BIENVENIDA</string>
+    <string name="c_mo_podemos_ayudarte">¿CÓMO PODEMOS AYUDARTE?</string>
+    <string name="perder_peso">PERDER PESO</string>
+    <string name="volverme_m_s_fuerte">VOLVERME MÁS FUERTE</string>
+    <string name="mantenerse_en_forma">MANTENERSE EN FORMA</string>
+    <string name="siguiente">SIGUIENTE</string>
+</resources>

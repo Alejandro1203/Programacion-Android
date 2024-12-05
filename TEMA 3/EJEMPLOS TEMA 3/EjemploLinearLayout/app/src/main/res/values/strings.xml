@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EjemploLinearLayout</string>
+    <string name="textview_1">TextView 1</string>
+    <string name="textview_2">TextView 2</string>
+</resources>
