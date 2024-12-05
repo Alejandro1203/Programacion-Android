@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">T5_Ejercicio2</string>
+    <string-array name="datosListado">
+        <item>Lost</item>
+        <item>Pokemon</item>
+        <item>Digimon</item>
+        <item>Yu-Gi-Oh</item>
+        <item>Suits</item>
+        <item>Lucifer</item>
+        <item>Vikingos</item>
+        <item>Dark</item>
+        <item>KAOS</item>
+        <item>Narcos</item>
+    </string-array>
+</resources>

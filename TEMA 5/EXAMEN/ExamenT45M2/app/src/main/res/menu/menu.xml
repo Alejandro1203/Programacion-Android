@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/MnOp1" android:title="@string/peliculas">
+        <menu>
+            <item
+                android:id="@+id/MnOp1_1"
+                android:title="@string/studio_ghibli" />
+            <item
+                android:id="@+id/MnOp1_2"
+                android:title="@string/clamp"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/MnOp2"
+        android:title="@string/series" />
+    <item android:id="@+id/MnOp3" android:title="@string/manga">
+        <menu>
+            <item
+                android:id="@+id/MnOp3_1"
+                android:title="@string/shonen" />
+            <item
+                android:id="@+id/MnOp3_2"
+                android:title="@string/shojo" />
+        </menu>
+    </item>
+</menu>

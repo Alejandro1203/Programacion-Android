@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">T5_Ejercicio1</string>
+    <string-array name="datos">
+        <item>Opción1</item>
+        <item>Opción2</item>
+        <item>Opción3</item>
+        <item>Opción4</item>
+        <item>Opción5</item>
+    </string-array>
+</resources>

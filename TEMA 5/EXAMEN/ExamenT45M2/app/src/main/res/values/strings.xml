@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">ExamenT4-5M2</string>
+    <string-array name="datosStudioGhibli">
+        <item>Mi vecino Totoro</item>
+        <item>El castillo ambulante</item>
+        <item>El viaje de Chichiro</item>
+        <item>Susurros del corazón</item>
+        <item>Haru en el reino de los gatos</item>
+    </string-array>
+
+    <string-array name="datosSpinner">
+        <item>Shonen</item>
+        <item>Shojo</item>
+    </string-array>
+
+    <string-array name="datosGridListShonen">
+        <item>Guardianes de la noche</item>
+        <item>Ataque a los titanes</item>
+        <item>Desaparecido</item>
+        <item>Naruto</item>
+        <item>Los siete pecados capitales</item>
+    </string-array>
+
+    <string-array name="datosGridListShojo">
+        <item>Sakura</item>
+        <item>Fruit Basket</item>
+    </string-array>
+
+
+    <string name="studio_ghibli">Studio Ghibli</string>
+    <string name="peliculas">Peliculas</string>
+    <string name="clamp">Clamp</string>
+    <string name="series">Series</string>
+    <string name="manga">Manga</string>
+    <string name="shonen">Shonen</string>
+    <string name="shojo">Shojo</string>
+    <string name="volver">Volver</string>
+</resources>
