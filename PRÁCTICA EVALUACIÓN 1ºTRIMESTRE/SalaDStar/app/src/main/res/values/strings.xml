@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SalaD\'Star</string>
+    <string name="correo">Correo</string>
+    <string name="contrase_a">Contraseña</string>
+</resources>
