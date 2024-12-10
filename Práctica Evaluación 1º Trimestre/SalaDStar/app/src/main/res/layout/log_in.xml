@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/black">
 
@@ -34,20 +35,18 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center"/>
 
-
-
-    <EditText
-        android:id="@+id/edtCorreo"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
-        android:hint="@string/correo"
-        android:textColorHint="#60292929"
-        android:textColor="#292929"
-        android:background="@drawable/shape"
-        android:textCursorDrawable="@color/black"
-        android:paddingStart="5dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"/>
+        <EditText
+            android:id="@+id/edtUsuario"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:hint="Usuario"
+            android:textColorHint="#60292929"
+            android:textColor="#292929"
+            android:background="@drawable/shape"
+            android:textCursorDrawable="@color/black"
+            android:paddingStart="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/edtContrasenya"
@@ -60,12 +59,27 @@
         android:background="@drawable/shape"
         android:textCursorDrawable="@color/black"
         android:paddingLeft="5dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"/>
 
+    <Button
+        android:id="@+id/btnInicioSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Sesión"
+        android:textColor="@color/white"
+        android:backgroundTint="#42214b"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"/>
 
-
-
-
-
+    <TextView
+        android:id="@+id/txtRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No tengo cuenta. Crear"
+        android:textSize="15sp"
+        android:fontFamily="cursive"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"/>
 </LinearLayout>
