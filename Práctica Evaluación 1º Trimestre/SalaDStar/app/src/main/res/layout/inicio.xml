@@ -18,9 +18,6 @@
         android:id="@+id/carga"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:progressDrawable="@color/white"
         android:layout_below="@+id/logo"
         android:layout_centerHorizontal="true"/>
-
-
 </RelativeLayout>

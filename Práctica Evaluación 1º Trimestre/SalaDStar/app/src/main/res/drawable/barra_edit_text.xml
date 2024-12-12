@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Cambio del grosor y color del textCursor (implementado en los editText del proyecto)-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <size android:width="1.75dp"/>
+    <solid android:color="@color/black"/>
+</shape>

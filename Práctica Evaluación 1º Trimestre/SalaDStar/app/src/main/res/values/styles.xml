@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    Cambio del color de las opciones del menú-->
+    <style name="CustomMenuItemTextColor" parent="TextAppearance.AppCompat.Menu">
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>

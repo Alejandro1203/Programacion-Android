@@ -1,11 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Base.Theme.SalaDStar" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
 
     </style>
 
     <style name="Theme.SalaDStar" parent="Base.Theme.SalaDStar" >
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 </resources>

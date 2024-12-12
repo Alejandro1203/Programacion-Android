@@ -2,4 +2,18 @@
     <string name="app_name">SalaD\'Star</string>
     <string name="correo">Correo</string>
     <string name="contrase_a">Contraseña</string>
+    <string name="bienvenido_a">Bienvenido a</string>
+    <string name="inicio_sesi_n">Inicio Sesión</string>
+    <string name="usuario">Usuario</string>
+    <string name="iniciar_sesi_n">Iniciar Sesión</string>
+    <string name="no_tengo_cuenta_crear">No tengo cuenta. Crear</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="confirmar_contrase_a">Confirmar contraseña</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="ya_tengo_cuenta_iniciar_sesi_n">Ya tengo cuenta. Iniciar sesión.</string>
+    <string name="correo_electr_nico">Correo electrónico</string>
+    <string name="llamar">Llamar</string>
+    <string name="atencion_al_cliente">Atencion al Cliente</string>
+    <string name="ticket">Ticket</string>
+    <string name="home">Home</string>
 </resources>

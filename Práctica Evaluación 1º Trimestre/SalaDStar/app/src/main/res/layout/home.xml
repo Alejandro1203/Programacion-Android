@@ -2,19 +2,49 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-    
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <ListView
+        <TextView
+            android:id="@+id/textoH1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="34sp"/>
+
+        <ImageView
+            android:id="@+id/imagenCentral"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <GridView
+            android:id="@+id/listaGrid"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:numColumns="2"/>
     </LinearLayout>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,30 +53,35 @@
         android:background="#333">
 
         <ImageView
-            android:src="@drawable/homa"
+            android:id="@+id/home"
+            android:src="@drawable/hogar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
 
         <ImageView
-            android:src="@drawable/apoyo"
+            android:id="@+id/ticket"
+            android:src="@drawable/boleto"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
 
         <ImageView
-            android:src="@drawable/apoyo"
+            android:id="@+id/shop"
+            android:src="@drawable/compra"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
 
         <ImageView
-            android:src="@drawable/apoyo"
+            android:id="@+id/user"
+            android:src="@drawable/usuario"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-
-
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
     </LinearLayout>
-
 </LinearLayout>
