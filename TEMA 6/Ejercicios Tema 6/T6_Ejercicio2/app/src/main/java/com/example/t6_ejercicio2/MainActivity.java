@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Fragmento1 fragmento = new Fragmento1();
         Fragmento2 fragmento2 = new Fragmento2();
         FT.add(R.id.contenedor, fragmento);
-        FT.add(R.id.contenedor, fragmento);
+        FT.add(R.id.contenedor, fragmento2);
         FT.commit();
     }
 }
