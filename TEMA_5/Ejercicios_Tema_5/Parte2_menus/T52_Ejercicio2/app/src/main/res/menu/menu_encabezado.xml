@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="MnOp1" android:title="DÍAS DE LA SEMANA">
+    <item android:id="@+id/MnOp1" android:title="@string/d_as_de_la_semana">
         <menu>
-            <item android:id="@+id/MnOp1_1" android:title="Lunes"></item>
-            <item android:id="@+id/MnOp1_2" android:title="Martes"></item>
-            <item android:id="@+id/MnOp1_3" android:title="Miércoles"></item>
-            <item android:id="@+id/MnOp1_4" android:title="Jueves"></item>
-            <item android:id="@+id/MnOp1_5" android:title="Viernes"></item>
-            <item android:id="@+id/MnOp1_6" android:title="Sábado"></item>
-            <item android:id="@+id/MnOp1_7" android:title="Domingo"></item>
+            <item android:id="@+id/MnOp1_1" android:title="@string/lunes"/>
+            <item android:id="@+id/MnOp1_2" android:title="@string/martes"/>
+            <item android:id="@+id/MnOp1_3" android:title="@string/mi_rcoles"/>
+            <item android:id="@+id/MnOp1_4" android:title="@string/jueves"/>
+            <item android:id="@+id/MnOp1_5" android:title="@string/viernes"/>
+            <item android:id="@+id/MnOp1_6" android:title="@string/s_bado"/>
+            <item android:id="@+id/MnOp1_7" android:title="@string/domingo"/>
         </menu>
     </item>
-    <item android:id="MnOp2" android:title="MESES DEL AÑO">
+    <item android:id="@+id/MnOp2" android:title="@string/meses_del_a_o">
         <menu>
-            <item android:id="@+id/MnOp2_1" android:title="Enero"></item>
-            <item android:id="@+id/MnOp2_2" android:title="Febrero"></item>
-            <item android:id="@+id/MnOp2_3" android:title="Marzo"></item>
-            <item android:id="@+id/MnOp2_4" android:title="Abril"></item>
+            <item android:id="@+id/MnOp2_1" android:title="@string/enero"/>
+            <item android:id="@+id/MnOp2_2" android:title="@string/febrero"/>
+            <item android:id="@+id/MnOp2_3" android:title="@string/marzo"/>
+            <item android:id="@+id/MnOp2_4" android:title="@string/abril"/>
         </menu>
     </item>
 </menu>

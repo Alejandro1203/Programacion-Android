@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">T52_Ejercicio2</string>
+    <string name="pulsa_una_opci_n_del_men">Pulsa una opción del menú</string>
+    <string name="d_as_de_la_semana">DÍAS DE LA SEMANA</string>
+    <string name="lunes">Lunes</string>
+    <string name="martes">Martes</string>
+    <string name="mi_rcoles">Miércoles</string>
+    <string name="jueves">Jueves</string>
+    <string name="viernes">Viernes</string>
+    <string name="s_bado">Sábado</string>
+    <string name="domingo">Domingo</string>
+    <string name="meses_del_a_o">MESES DEL AÑO</string>
+    <string name="enero">Enero</string>
+    <string name="febrero">Febrero</string>
+    <string name="marzo">Marzo</string>
+    <string name="abril">Abril</string>
 </resources>
