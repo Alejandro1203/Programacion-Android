@@ -24,7 +24,7 @@
 
         <provider
             android:authorities="com.example.ejemplocontentprovider"
-            android:name="ClientesProvider"/>
+            android:name=".ClientesProvider"/>
 
     </application>
 
