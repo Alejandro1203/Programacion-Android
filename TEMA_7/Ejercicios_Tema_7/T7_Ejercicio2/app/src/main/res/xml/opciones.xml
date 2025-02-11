@@ -13,8 +13,14 @@
             android:title="SISTEMA OPERATIVO"
             android:summary="Pulsa para elegir el sistema operativo"
             android:dialogTitle="SISTEMA OPERATIVO"
-            android:entries=""/>
+            android:entries="@array/so"
+            android:entryValues="@array/id_so"/>
 
+        <EditTextPreference
+            android:key="opcion3"
+            android:title="VERSIÓN DEL SISTEMA"
+            android:summary="Pulsa para introducir la versión del sistema"
+            android:dialogTitle="INTRODUCE VERSIÓN"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
