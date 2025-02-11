@@ -1,0 +1,20 @@
+<resources>
+    <string-array name="repetir">
+        <item>Lunes-Viernes</item>
+        <item>Sabado-Domingo</item>
+    </string-array>
+    <string-array name="key_repetir">
+        <item>L-V</item>
+        <item>S-D</item>
+    </string-array>
+
+    <string-array name="notificar_llamadas">
+        <item>Sí</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="key_notificar_llamadas">
+        <item>Sí</item>
+        <item>No</item>
+    </string-array>
+    <string name="app_name">T7_Ejercicio3</string>
+</resources>
