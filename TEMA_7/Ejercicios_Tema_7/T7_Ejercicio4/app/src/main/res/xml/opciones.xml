@@ -1,41 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory android:title="Modo Silencio">
+
+    <PreferenceCategory
+        android:title="Modo Silencio"
+        app:iconSpaceReserved="false">
+
         <SwitchPreference
+            app:iconSpaceReserved="false"
             android:key="silencio"
             android:title="Modo Silencio"
             android:summary="Silenciar llamadas entrantes y notificaciones"/>
 
         <SwitchPreference
+            app:iconSpaceReserved="false"
             android:key="silencio_multimedia"
             android:title="Silenciar Multimedia en el Modo Silencio"
             android:summary="juegos, vídeos, música y otras aplicaciones"/>
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="No molestar">
+    <PreferenceCategory
+        android:title="No molestar"
+        app:iconSpaceReserved="false">
         <SwitchPreference
+            app:iconSpaceReserved="false"
             android:key="no-molestar"
             android:title="No molestar"
             android:summary="No habrá recordatorios de llamadas entrantes ni notificaciones"/>
 
         <SwitchPreference
+            app:iconSpaceReserved="false"
             android:key="hora_activacion"
             android:title="Programar hora de activación"/>
 
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:dependency="hora_activacion"
             android:key="hora_activacion_inicio"
             android:title="Iniciar"
             android:dialogTitle="Introduce hora inicio"/>
 
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:dependency="hora_activacion"
             android:key="hora_activacion_final"
             android:title="Finalizar"
             android:dialogTitle="introduce hora de finalización"/>
 
         <ListPreference
+            app:iconSpaceReserved="false"
             android:dependency="hora_activacion"
             android:key="hora_activacion_repetir"
             android:title="Repetir"
@@ -44,10 +58,12 @@
             android:entryValues="@array/key_repetir"/>
 
         <SwitchPreference
+            app:iconSpaceReserved="false"
             android:key="no_molestar_bloqueado"
             android:title="Cuando el dispositivo esté bloqueado"/>
 
         <ListPreference
+            app:iconSpaceReserved="false"
             android:key="notificar_llamadas"
             android:title="Notificar acerca de las llamadas"
             android:dialogTitle="REPETIR"
@@ -55,25 +71,33 @@
             android:entryValues="@array/key_notificar_llamadas"/>
 
         <SwitchPreference
+            app:iconSpaceReserved="false"
             android:key="notificar_llamadas_perdidas"
             android:title="Notificar llamadas perdidas"
             android:summary="Sonar o vibrar mientras recibes la segunda llamada del mismo contacto en 15 minutos"/>
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Vibrar">
+    <PreferenceCategory
+        android:title="Vibrar"
+        app:iconSpaceReserved="false">
 
         <SwitchPreference
+            app:iconSpaceReserved="false"
             android:key="vibrar_llamadas"
             android:title="Vibrar en llamadas"/>
 
         <SwitchPreference
+            app:iconSpaceReserved="false"
             android:key="vibrar_modo_silencio"
             android:title="Vibrar en modo silencio"/>
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Respuesta Táctil">
+    <PreferenceCategory
+        android:title="Respuesta Táctil"
+        app:iconSpaceReserved="false">
 
         <SwitchPreference
+            app:iconSpaceReserved="false"
             android:key="respuesta_tactil"
             android:title="Respuesta táctil"
             android:summary="Recibir respuesta táctil con gestos y controles del sistema"/>
@@ -81,6 +105,7 @@
     </PreferenceCategory>
 
     <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        app:iconSpaceReserved="false"
         android:key="ajustes_adicionales"
         android:title="Ajustes Adicionales">
 
