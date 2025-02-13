@@ -81,11 +81,28 @@
         <SwitchPreference
             android:key="respuesta_tactil"
             android:title="Respuesta táctil"
-            android:summary="Recibir respuesta táctul con gestos y controles del sistema"/>
-
-        <Prefe
+            android:summary="Recibir respuesta táctil con gestos y controles del sistema"/>
 
     </PreferenceCategory>
+
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="ajustes_adicionales"
+        android:title="Ajustes Adicionales">
+
+        <SwitchPreference
+            android:key="tonos_teclado"
+            android:title="Tonos de teclado de marcado"/>
+
+        <SwitchPreference
+            android:key="sonido_toques"
+            android:title="Sonido de toques"/>
+
+        <SwitchPreference
+            android:key="reproducir_captura"
+            android:title="Reproducir solo al tomar capturas de pantalla"/>
+
+
+    </PreferenceScreen>
 
 
 </PreferenceScreen>
