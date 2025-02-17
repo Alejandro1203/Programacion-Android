@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">AlejandroFernandezExamenBBDD</string>
+    <string name="mis_pel_culas">MIS PELÍCULAS</string>
+    <string-array name="uso_datos">
+        <item>Solo wifi</item>
+        <item>Ahorrar datos</item>
+        <item>Datos máximos</item>
+    </string-array>
+    <string-array name="key_uso_datos">
+        <item>wifi</item>
+        <item>ahorrar</item>
+        <item>dat_max</item>
+    </string-array>
+
+</resources>
