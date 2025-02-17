@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">AlejandroFernandezExamenBBDD</string>
     <string name="mis_pel_culas">MIS PELÍCULAS</string>
+    <string name="tendencias">Tendencias</string>
+    <string name="mi_lista">Mi Lista</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="a_adir">Añadir</string>
     <string-array name="uso_datos">
         <item>Solo wifi</item>
         <item>Ahorrar datos</item>

@@ -37,14 +37,14 @@
             android:id="@+id/btn_add_favoritos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Añadir"
+            android:text="@string/a_adir"
             android:backgroundTint="#A8AAB0"/>
 
         <Button
             android:id="@+id/btn_add_cancelar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancelar"
+            android:text="@string/cancelar"
             android:backgroundTint="#A8AAB0"/>
     </LinearLayout>
 
@@ -59,17 +59,56 @@
             android:id="@+id/btn_del_favoritos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Eliminar"
+            android:text="@string/eliminar"
             android:backgroundTint="#A8AAB0"/>
 
         <Button
             android:id="@+id/btn_del_cancelar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancelar"
+            android:text="@string/cancelar"
             android:backgroundTint="#A8AAB0"/>
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/layout_peliculas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/txt_tendencias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tendencias"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="100dp"/>
+        
+        <TextView
+            android:id="@+id/txt_mi_lista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mi_lista"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/txt_tendencias"/>
+        
+        <ListView
+            android:id="@+id/list_tendencias"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/txt_tendencias"/>
 
+        <ListView
+            android:id="@+id/list_mi_lista"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/txt_tendencias"
+            android:layout_toRightOf="@id/list_tendencias"/>
+    </RelativeLayout>
 </LinearLayout>
