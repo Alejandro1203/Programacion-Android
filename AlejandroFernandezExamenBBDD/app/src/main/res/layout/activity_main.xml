@@ -102,13 +102,14 @@
             android:id="@+id/list_tendencias"
             android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:layout_below="@id/txt_tendencias"/>
+            android:layout_below="@id/txt_tendencias"
+            android:layout_marginEnd="50dp"/>
 
         <ListView
             android:id="@+id/list_mi_lista"
             android:layout_width="150dp"
             android:layout_height="match_parent"
             android:layout_below="@id/txt_tendencias"
-            android:layout_toRightOf="@id/list_tendencias"/>
+            android:layout_toEndOf="@id/list_tendencias"/>
     </RelativeLayout>
 </LinearLayout>
