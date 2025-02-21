@@ -1,1 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/huevo"
+        android:layout_width="500px"
+        android:layout_height="800px"
+        android:layout_marginTop="250px"
+        android:layout_gravity="center"
+        android:src="@drawable/huevazos"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Qué es lo que hay entre huevo y huevo?"
+        android:textSize="15sp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/edt"
+        android:layout_width="600px"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bellakeo"
+        android:layout_gravity="center"/>
+</LinearLayout>
