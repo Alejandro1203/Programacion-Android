@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">PracticaEvaluacion_2Trimestre_Alejandro</string>
+    <string name="buscar_contactos">Buscar contactos</string>
+    <string name="a_adir">Añadir</string>
+    <string name="modificar">Modificar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="avatar">Avatar</string>
+    <string name="tel_fono">Teléfono</string>
+    <string name="nombre">Nombre</string>
 </resources>

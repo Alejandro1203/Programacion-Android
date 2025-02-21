@@ -6,15 +6,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class AvatarBBDD extends SQLiteOpenHelper {
+public class ContactoBBDD extends SQLiteOpenHelper {
 
-    String sqlCreate = "CREATE TABLE Avatares(" +
+    String sqlCreate = "CREATE TABLE Contactos(" +
             "clave INTEGER PRIMARY KEY AUTOINCREMENT," +
             "nombre TEXT," +
             "telefono TEXT," +
             "avatar INTEGER)";
 
-    public AvatarBBDD(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public ContactoBBDD(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
@@ -25,7 +25,7 @@ public class AvatarBBDD extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS Avatares");
+        db.execSQL("DROP TABLE IF EXISTS Contactos");
         db.execSQL(sqlCreate);
     }
 }

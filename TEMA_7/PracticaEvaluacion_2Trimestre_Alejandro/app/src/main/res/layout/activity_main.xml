@@ -1,19 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/buscador_contactos"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:hint="@string/buscar_contactos"
+        android:background="@drawable/edit_text"
+        android:padding="10dp"
+        android:layout_margin="10px"/>
+    
+    <ImageButton
+        android:id="@+id/add_contactos"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/addcontact3"
+        android:layout_gravity="end"/>
+    
+    <RelativeLayout
+        android:id="@+id/seccion_CU_contactos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txt_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="@string/nombre"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/edt_nombre"
+            android:layout_width="500px"
+            android:layout_height="100px"
+            android:layout_toEndOf="@+id/txt_nombre" />
+
+        <TextView
+            android:id="@+id/txt_telefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="@string/tel_fono"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="8dp"
+            android:layout_below="@id/txt_nombre"/>
+
+        <EditText
+            android:id="@+id/edt_telefono"
+            android:layout_width="500px"
+            android:layout_height="100px"
+            android:layout_toEndOf="@+id/txt_telefono"
+            android:layout_below="@id/edt_nombre"/>
+
+        <TextView
+            android:id="@+id/txt_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/avatar"
+            android:layout_toEndOf="@id/edt_nombre"/>
+        
+        <Spinner
+            android:id="@+id/spinner_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/txt_avatar"/>
+        
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a_adir"
+            android:layout_below="@id/txt_telefono"
+            android:layout_marginTop="10px"/>
+
+        <Button
+            android:id="@+id/btn_modificar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modificar"
+            android:layout_below="@id/txt_telefono"
+            android:layout_toEndOf="@id/btn_add"
+            android:layout_marginTop="10px"/>
+
+        <Button
+            android:id="@+id/btn_cancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancelar"
+            android:layout_below="@id/txt_telefono"
+            android:layout_toEndOf="@id/btn_modificar"
+            android:layout_marginTop="10px"/>
+    </RelativeLayout>
+    
+    <ListView
+        android:id="@+id/lista_contactos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
