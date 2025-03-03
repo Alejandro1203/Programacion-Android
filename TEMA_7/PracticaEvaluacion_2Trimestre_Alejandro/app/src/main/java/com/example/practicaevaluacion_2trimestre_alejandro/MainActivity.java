@@ -1,8 +1,22 @@
 package com.example.practicaevaluacion_2trimestre_alejandro;
 
+import static com.example.practicaevaluacion_2trimestre_alejandro.ContactosProveedor.CONTENT_URI;
+
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
@@ -12,12 +26,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.practicaevaluacion_2trimestre_alejandro.BBDD.AdaptadorAvatar;
+import com.example.practicaevaluacion_2trimestre_alejandro.BBDD.ContactoBBDD;
 import com.example.practicaevaluacion_2trimestre_alejandro.Spinner.AdaptadorSpinner;
 import com.example.practicaevaluacion_2trimestre_alejandro.Spinner.DatosSpinner;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    int id_avatar;
+    ListView lista_contactos;
+    AdaptadorAvatar adaptadorAvatar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +48,18 @@ public class MainActivity extends AppCompatActivity {
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final ListView lista_contactos = findViewById(R.id.lista_contactos);
         final Spinner miSpinner = findViewById(R.id.spinner_avatar);
+        final ImageView addContact = findViewById(R.id.add_contactos);
+        final RelativeLayout seccionContactos = findViewById(R.id.seccion_CU_contactos);
+        final Button btn_add = findViewById(R.id.btn_add);
+        final Button btn_mod = findViewById(R.id.btn_modificar);
+        final Button btn_can = findViewById(R.id.btn_cancelar);
+        final EditText edtNombre = findViewById(R.id.edt_nombre);
+        final EditText edtTelefono = findViewById(R.id.edt_telefono);
+        lista_contactos = findViewById(R.id.lista_contactos);
+
+        ContactoBBDD contactoBBDD = new ContactoBBDD(this, "DBContacto", null, 1);
+        SQLiteDatabase db = contactoBBDD.getWritableDatabase();
 
         ArrayList<DatosSpinner> datosSpinner = new ArrayList<>();
         datosSpinner.add(new DatosSpinner(R.drawable.batman));
@@ -44,8 +75,101 @@ public class MainActivity extends AppCompatActivity {
 
         AdaptadorSpinner adaptadorSpinner = new AdaptadorSpinner(this, datosSpinner);
         miSpinner.setAdapter(adaptadorSpinner);
+
+        cargarListadoContentProvider();
+
+        miSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                DatosSpinner drawable = (DatosSpinner) parent.getItemAtPosition(position);
+                id_avatar = drawable.getAvatar();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        addContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seccionContactos.setVisibility(View.VISIBLE);
+                btn_mod.setVisibility(View.GONE);
+            }
+        });
+
+        btn_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(!edtNombre.getText().toString().isEmpty() && !edtTelefono.getText().toString().isEmpty()) {
+                    String nombre = edtNombre.getText().toString();
+                    String telefono = edtTelefono.getText().toString();
+
+                    ContentValues values = new ContentValues();
+                    values.put(ContactosProveedor.Contactos.COL_NOMBRE, nombre);
+                    values.put(ContactosProveedor.Contactos.COL_TELEFONO, telefono);
+                    values.put(ContactosProveedor.Contactos.COL_AVATAR, id_avatar);
+
+                    getContentResolver().insert(CONTENT_URI, values);
+                    cargarListadoContentProvider();
+                }
+            }
+        });
     }
 
     private void insertarDataBBDD(SQLiteDatabase db) {
+    }
+
+    private void cargarListadoContentProvider() {
+        ArrayList<AvatarDatos> avatares = new ArrayList<>();
+
+        String[] columnas = {
+                ContactosProveedor.Contactos.COL_ID,
+                ContactosProveedor.Contactos.COL_AVATAR,
+                ContactosProveedor.Contactos.COL_NOMBRE,
+                ContactosProveedor.Contactos.COL_TELEFONO
+        };
+
+        Uri uri = CONTENT_URI;
+
+        ContentResolver cr = getContentResolver();
+
+        // Hacemos la consulta
+        Cursor cur = cr.query(
+                uri,
+                columnas, // Columnas a devolver
+                null,     // Condición de la consulta
+                null,     // Argumentos de la consulta
+                null      // Orden de la consulta
+        );
+
+        if(cur != null) {
+            if(cur.moveToFirst()) {
+                int clave;
+                int avatar;
+                String nombre;
+                String telefono;
+
+
+                int colClave = cur.getColumnIndex(ContactosProveedor.Contactos.COL_ID);
+                int colAvatar = cur.getColumnIndex(ContactosProveedor.Contactos.COL_AVATAR);
+                int colNombre = cur.getColumnIndex(ContactosProveedor.Contactos.COL_NOMBRE);
+                int colTelefono = cur.getColumnIndex(ContactosProveedor.Contactos.COL_TELEFONO);
+
+                do {
+                    clave = cur.getInt(colClave);
+                    avatar = cur.getInt(colAvatar);
+                    nombre = cur.getString(colNombre);
+                    telefono = cur.getString(colTelefono);
+
+                    avatares.add(new AvatarDatos(clave, avatar, nombre, telefono));
+                } while(cur.moveToNext());
+            }
+        }
+
+         adaptadorAvatar = new AdaptadorAvatar(MainActivity.this, avatares);
+        lista_contactos.setAdapter(adaptadorAvatar);
     }
 }

@@ -65,6 +65,7 @@
             android:id="@+id/edt_telefono"
             android:layout_width="500px"
             android:layout_height="100px"
+            android:inputType="number"
             android:layout_toEndOf="@+id/txt_telefono"
             android:layout_below="@id/edt_nombre"/>
 

@@ -38,6 +38,7 @@ public class ContactosProveedor extends ContentProvider {
 
         }
 
+        public static final String COL_ID = "clave";
         public static final String COL_NOMBRE = "nombre";
         public static final String COL_TELEFONO = "telefono";
         public static final String COL_AVATAR = "avatar";
