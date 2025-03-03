@@ -1,15 +1,16 @@
 package com.example.practicaevaluacion_2trimestre_alejandro;
 
-import static com.example.practicaevaluacion_2trimestre_alejandro.ContactosProveedor.CONTENT_URI;
-
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+import static com.example.practicaevaluacion_2trimestre_alejandro.ContentProvider.ContactosProveedor.CONTENT_URI;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -19,15 +20,12 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
-import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 import com.example.practicaevaluacion_2trimestre_alejandro.BBDD.AdaptadorAvatar;
-import com.example.practicaevaluacion_2trimestre_alejandro.BBDD.ContactoBBDD;
+import com.example.practicaevaluacion_2trimestre_alejandro.ContentProvider.AvatarDatos;
+import com.example.practicaevaluacion_2trimestre_alejandro.ContentProvider.ContactosProveedor;
 import com.example.practicaevaluacion_2trimestre_alejandro.Spinner.AdaptadorSpinner;
 import com.example.practicaevaluacion_2trimestre_alejandro.Spinner.DatosSpinner;
 
@@ -38,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     int id_avatar;
     ListView lista_contactos;
     AdaptadorAvatar adaptadorAvatar;
-
+    Spinner miSpinner;
+    AvatarDatos avatarSeleccionado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +45,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        final Spinner miSpinner = findViewById(R.id.spinner_avatar);
         final ImageView addContact = findViewById(R.id.add_contactos);
         final RelativeLayout seccionContactos = findViewById(R.id.seccion_CU_contactos);
         final Button btn_add = findViewById(R.id.btn_add);
@@ -56,27 +52,14 @@ public class MainActivity extends AppCompatActivity {
         final Button btn_can = findViewById(R.id.btn_cancelar);
         final EditText edtNombre = findViewById(R.id.edt_nombre);
         final EditText edtTelefono = findViewById(R.id.edt_telefono);
+
+        setSupportActionBar(toolbar);
         lista_contactos = findViewById(R.id.lista_contactos);
 
-        ContactoBBDD contactoBBDD = new ContactoBBDD(this, "DBContacto", null, 1);
-        SQLiteDatabase db = contactoBBDD.getWritableDatabase();
-
-        ArrayList<DatosSpinner> datosSpinner = new ArrayList<>();
-        datosSpinner.add(new DatosSpinner(R.drawable.batman));
-        datosSpinner.add(new DatosSpinner(R.drawable.capi));
-        datosSpinner.add(new DatosSpinner(R.drawable.deadpool));
-        datosSpinner.add(new DatosSpinner(R.drawable.hulk));
-        datosSpinner.add(new DatosSpinner(R.drawable.furia));
-        datosSpinner.add(new DatosSpinner(R.drawable.ironman));
-        datosSpinner.add(new DatosSpinner(R.drawable.lobezno));
-        datosSpinner.add(new DatosSpinner(R.drawable.spiderman));
-        datosSpinner.add(new DatosSpinner(R.drawable.thor));
-        datosSpinner.add(new DatosSpinner(R.drawable.wonderwoman));
-
-        AdaptadorSpinner adaptadorSpinner = new AdaptadorSpinner(this, datosSpinner);
-        miSpinner.setAdapter(adaptadorSpinner);
-
+        cargarSpinner();
         cargarListadoContentProvider();
+
+        registerForContextMenu(lista_contactos);
 
         miSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -112,14 +95,70 @@ public class MainActivity extends AppCompatActivity {
                     values.put(ContactosProveedor.Contactos.COL_TELEFONO, telefono);
                     values.put(ContactosProveedor.Contactos.COL_AVATAR, id_avatar);
 
-                    getContentResolver().insert(CONTENT_URI, values);
+                    ContentResolver cr = getContentResolver();
+                    cr.insert(CONTENT_URI, values);
                     cargarListadoContentProvider();
+
+                    edtNombre.setText("");
+                    edtTelefono.setText("");
                 }
+            }
+        });
+
+        btn_can.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seccionContactos.setVisibility(View.GONE);
+            }
+        });
+
+        lista_contactos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                avatarSeleccionado = (AvatarDatos) parent.getItemAtPosition(position);
+
+                return  false;
             }
         });
     }
 
-    private void insertarDataBBDD(SQLiteDatabase db) {
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_contextual, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.MnOp1) {
+            ContentResolver cr = getContentResolver();
+            cr.delete(CONTENT_URI, ContactosProveedor.Contactos.COL_ID + "=" + avatarSeleccionado.getId(), null);
+            cargarListadoContentProvider();
+        }
+
+        return super.onContextItemSelected(item);
+    }
+
+    private void cargarSpinner() {
+        miSpinner = findViewById(R.id.spinner_avatar);
+
+        ArrayList<DatosSpinner> datosSpinner = new ArrayList<>();
+        datosSpinner.add(new DatosSpinner(R.drawable.batman));
+        datosSpinner.add(new DatosSpinner(R.drawable.capi));
+        datosSpinner.add(new DatosSpinner(R.drawable.deadpool));
+        datosSpinner.add(new DatosSpinner(R.drawable.hulk));
+        datosSpinner.add(new DatosSpinner(R.drawable.furia));
+        datosSpinner.add(new DatosSpinner(R.drawable.ironman));
+        datosSpinner.add(new DatosSpinner(R.drawable.lobezno));
+        datosSpinner.add(new DatosSpinner(R.drawable.spiderman));
+        datosSpinner.add(new DatosSpinner(R.drawable.thor));
+        datosSpinner.add(new DatosSpinner(R.drawable.wonderwoman));
+
+        AdaptadorSpinner adaptadorSpinner = new AdaptadorSpinner(this, datosSpinner);
+        miSpinner.setAdapter(adaptadorSpinner);
     }
 
     private void cargarListadoContentProvider() {

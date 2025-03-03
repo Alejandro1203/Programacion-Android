@@ -1,4 +1,4 @@
-package com.example.practicaevaluacion_2trimestre_alejandro;
+package com.example.practicaevaluacion_2trimestre_alejandro.ContentProvider;
 
 public class AvatarDatos {
     private int id;

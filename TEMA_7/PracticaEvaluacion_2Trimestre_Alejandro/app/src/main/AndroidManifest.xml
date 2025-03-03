@@ -23,7 +23,7 @@
         </activity>
         <provider
             android:authorities="com.example.practicaevaluacion_2trimestre_alejandro"
-            android:name=".ContactosProveedor"/>
+            android:name=".ContentProvider.ContactosProveedor"/>
     </application>
 
 </manifest>

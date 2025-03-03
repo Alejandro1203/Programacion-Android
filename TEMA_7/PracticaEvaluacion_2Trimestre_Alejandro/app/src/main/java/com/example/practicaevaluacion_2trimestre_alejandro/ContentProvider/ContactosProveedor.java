@@ -1,4 +1,4 @@
-package com.example.practicaevaluacion_2trimestre_alejandro;
+package com.example.practicaevaluacion_2trimestre_alejandro.ContentProvider;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;

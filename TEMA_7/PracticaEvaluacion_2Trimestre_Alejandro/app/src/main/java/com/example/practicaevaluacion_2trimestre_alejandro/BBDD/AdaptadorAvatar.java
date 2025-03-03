@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.practicaevaluacion_2trimestre_alejandro.AvatarDatos;
+import com.example.practicaevaluacion_2trimestre_alejandro.ContentProvider.AvatarDatos;
 import com.example.practicaevaluacion_2trimestre_alejandro.R;
 
 import java.util.ArrayList;
