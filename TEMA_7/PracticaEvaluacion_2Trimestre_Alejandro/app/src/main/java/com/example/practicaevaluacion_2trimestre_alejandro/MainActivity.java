@@ -2,6 +2,7 @@ package com.example.practicaevaluacion_2trimestre_alejandro;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        final ListView lista_contactos = findViewById(R.id.lista_contactos);
         final Spinner miSpinner = findViewById(R.id.spinner_avatar);
 
         ArrayList<DatosSpinner> datosSpinner = new ArrayList<>();
