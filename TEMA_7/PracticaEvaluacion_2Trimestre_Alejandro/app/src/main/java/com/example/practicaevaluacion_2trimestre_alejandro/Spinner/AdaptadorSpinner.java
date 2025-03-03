@@ -6,12 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.example.practicaevaluacion_2trimestre_alejandro.R;
-
 import java.util.ArrayList;
 
 public class AdaptadorSpinner extends ArrayAdapter<DatosSpinner> {

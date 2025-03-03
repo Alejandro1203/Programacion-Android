@@ -1,7 +1,5 @@
 package com.example.practicaevaluacion_2trimestre_alejandro;
 
-import static android.view.View.GONE;
-import static android.view.View.VISIBLE;
 import static com.example.practicaevaluacion_2trimestre_alejandro.ContentProvider.ContactosProveedor.CONTENT_URI;
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -19,25 +17,23 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import com.example.practicaevaluacion_2trimestre_alejandro.BBDD.AdaptadorAvatar;
-import com.example.practicaevaluacion_2trimestre_alejandro.ContentProvider.AvatarDatos;
+import com.example.practicaevaluacion_2trimestre_alejandro.BBDD.AdaptadorContacto;
+import com.example.practicaevaluacion_2trimestre_alejandro.ContentProvider.ContactosDatos;
 import com.example.practicaevaluacion_2trimestre_alejandro.ContentProvider.ContactosProveedor;
 import com.example.practicaevaluacion_2trimestre_alejandro.Spinner.AdaptadorSpinner;
 import com.example.practicaevaluacion_2trimestre_alejandro.Spinner.DatosSpinner;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     int id_avatar;
     ListView lista_contactos;
-    AdaptadorAvatar adaptadorAvatar;
+    AdaptadorContacto adaptadorAvatar;
     Spinner miSpinner;
-    AvatarDatos avatarSeleccionado;
+    ContactosDatos avatarSeleccionado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +48,11 @@ public class MainActivity extends AppCompatActivity {
         final Button btn_can = findViewById(R.id.btn_cancelar);
         final EditText edtNombre = findViewById(R.id.edt_nombre);
         final EditText edtTelefono = findViewById(R.id.edt_telefono);
-
-        setSupportActionBar(toolbar);
         lista_contactos = findViewById(R.id.lista_contactos);
 
         cargarSpinner();
         cargarListadoContentProvider();
-
+        setSupportActionBar(toolbar);
         registerForContextMenu(lista_contactos);
 
         miSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -109,13 +103,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 seccionContactos.setVisibility(View.GONE);
+                edtNombre.setText("");
+                edtTelefono.setText("");
             }
         });
 
         lista_contactos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                avatarSeleccionado = (AvatarDatos) parent.getItemAtPosition(position);
+                avatarSeleccionado = (ContactosDatos) parent.getItemAtPosition(position);
 
                 return  false;
             }
@@ -162,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void cargarListadoContentProvider() {
-        ArrayList<AvatarDatos> avatares = new ArrayList<>();
+        ArrayList<ContactosDatos> avatares = new ArrayList<>();
 
         String[] columnas = {
                 ContactosProveedor.Contactos.COL_ID,
@@ -203,12 +199,12 @@ public class MainActivity extends AppCompatActivity {
                     nombre = cur.getString(colNombre);
                     telefono = cur.getString(colTelefono);
 
-                    avatares.add(new AvatarDatos(clave, avatar, nombre, telefono));
+                    avatares.add(new ContactosDatos(clave, avatar, nombre, telefono));
                 } while(cur.moveToNext());
             }
         }
 
-         adaptadorAvatar = new AdaptadorAvatar(MainActivity.this, avatares);
+         adaptadorAvatar = new AdaptadorContacto(MainActivity.this, avatares);
         lista_contactos.setAdapter(adaptadorAvatar);
     }
 }

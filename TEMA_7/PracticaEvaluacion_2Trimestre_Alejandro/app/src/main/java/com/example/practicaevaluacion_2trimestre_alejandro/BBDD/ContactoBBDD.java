@@ -3,7 +3,6 @@ package com.example.practicaevaluacion_2trimestre_alejandro.BBDD;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import androidx.annotation.Nullable;
 
 public class ContactoBBDD extends SQLiteOpenHelper {

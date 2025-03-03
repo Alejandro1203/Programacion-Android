@@ -1,8 +1,8 @@
 package com.example.practicaevaluacion_2trimestre_alejandro.ContentProvider;
 
-public class AvatarDatos {
+public class ContactosDatos {
     private int id;
-    private int icono;
+    private int avatar;
     private String nombre;
     private String telefono;
 
@@ -10,8 +10,8 @@ public class AvatarDatos {
         return id;
     }
 
-    public int getIcono() {
-        return icono;
+    public int getAvatar() {
+        return avatar;
     }
 
     public String getNombre() {
@@ -22,9 +22,9 @@ public class AvatarDatos {
         return telefono;
     }
 
-    public AvatarDatos(int id, int icono, String nombre, String telefono) {
+    public ContactosDatos(int id, int avatar, String nombre, String telefono) {
         this.id = id;
-        this.icono = icono;
+        this.avatar = avatar;
         this.nombre = nombre;
         this.telefono = telefono;
     }
